@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Add Two Numbers]]></title>
+    <url>%2F2017%2F12%2F10%2FAdd-Two-Numbers%2F</url>
+    <content type="text"><![CDATA[“每天一个算法，第２天” ProblemYou are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of nodes contain a single digit. Add the two numbers and return it as a linked list. Example123Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt;4)Output: 7 -&gt; 0 -&gt; 8Explanation: 342 + 465 = 807. 你将得到２个存储非负整数的非空链表，这些单整数反序存储在每一个链表节点，将这两个链表的数字相加作为一个链表返回。这个题是Leetcode上的Algorithms的第２题，可从这里跳转：https://leetcode.com/problems/add-two-numbers/description/ Solution12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455struct ListNode &#123; int val; ListNode* next; ListNode(int x): val(x),next(NULL) &#123;&#125;&#125;;class Solution &#123;public: //method 1 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123; int n1 = 0, n2 = 0, i = 0, j = 0; while (l1 != NULL) &#123; n1 += l1-&gt;val * pow(10, i++); l1 = l1-&gt;next; &#125; while (l2 != NULL) &#123; n2 += l2-&gt;val * pow(10, j++); l2 = l2-&gt;next; &#125; int sum = n1 + n2; ListNode* res = new ListNode(-1); ListNode* cur = res; while (sum) &#123; cur-&gt;next = new ListNode(sum%10); sum /= 10; cur = cur-&gt;next; &#125; return res-&gt;next; &#125; //method 2 ListNode* add2Numbers(ListNode* l1, ListNode* l2) &#123; ListNode* p = l1; ListNode* q = l2; ListNode* res = new ListNode(-1); ListNode* cur = res; int carry = 0; while (p || q ) &#123; int x = (p?p-&gt;val:0); int y = (q?q-&gt;val:0); int sum = x + y + carry; carry = sum / 10; cur-&gt;next = new ListNode(sum%10); cur = cur-&gt;next; if (p) p = p-&gt;next; if (q) q = q-&gt;next; &#125; if (carry &gt; 0) cur-&gt;next = new ListNode(carry); return res-&gt;next; &#125;&#125;; 没有进行内存释放的调用测试代码]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Two Sum]]></title>
     <url>%2F2017%2F12%2F09%2FTwo-Sum%2F</url>
-    <content type="text"><![CDATA[“每天一个算法计划开始执行，希望我能够坚持下去” ProblemGiven an array of integers, return indices of the two numbers such that they add up to a specific target. Example:1234Given nums = [2, 7, 11, 15], target = 9,Because nums[0] + nums[1] = 2 + 7 = 9,return [0, 1]. 给定一个数组，如果数组中存在２个元素相加等于目标数，返回这２个元素的索引。这是Leetcode上算法的第一题，可从这个链接跳转：https://leetcode.com/problems/two-sum/description/ 123456789101112131415class Solution&#123;private: vector&lt;int&gt; vi;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; for (int i = 0; i &lt; nums.size(); i++) for (int j = i + 1; j &lt; nums.size(); j++) if (target == nums[i] + nums[j]) &#123; vi.push_back(i); vi.push_back(j); &#125; return vi; &#125;&#125;; 通过调用测试，我将她放到github上了：https://github.com/boothvic/algorithm]]></content>
+    <content type="text"><![CDATA[“每天一个算法计划开始执行，希望我能够坚持下去” ProblemGiven an array of integers, return indices of the two numbers such that they add up to a specific target. Example:1234Given nums = [2, 7, 11, 15], target = 9,Because nums[0] + nums[1] = 2 + 7 = 9,return [0, 1]. 给定一个数组，如果数组中存在２个元素相加等于目标数，返回这２个元素的索引。这是Leetcode上算法的第一题，可从这个链接跳转：https://leetcode.com/problems/two-sum/description/ Solution123456789101112131415class Solution&#123;private: vector&lt;int&gt; vi;public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123; for (int i = 0; i &lt; nums.size(); i++) for (int j = i + 1; j &lt; nums.size(); j++) if (target == nums[i] + nums[j]) &#123; vi.push_back(i); vi.push_back(j); &#125; return vi; &#125;&#125;; 通过调用测试，我将她放到github上了：https://github.com/boothvic/algorithm]]></content>
       <categories>
         <category>Algorithm</category>
       </categories>
