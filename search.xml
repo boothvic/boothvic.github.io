@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[句子日常]]></title>
+    <url>%2F2018%2F03%2F01%2F%E5%8F%A5%E5%AD%90%E6%97%A5%E5%B8%B8%2F</url>
+    <content type="text"><![CDATA[“平时不经意的收藏，于闲时默念”如果你解决不了一个问题，那么就解决一个更简单的问题：去发现问题．情绪，是智慧不够的一种产物．方向比努力重要，能力比知识重要，健康比成绩重要．人生三大疑惑：我是什么人？来自何处？要往何处去？无需想起，因为从未忘记．努力有用的话，还需要天才做什么？我们走的太远，以至于忘了为什么而出发．看清一个人又何必去揭穿，讨厌一个人有何必去翻脸．无论你遇见谁，Ta都是你生命中该出现的人，绝非偶然，Ta一定会教你一些什么．有一个夜晚，我烧毁了所有的记忆，从此我的梦就透明了；有一个早晨，我扔掉了所有的昨天，从此我的脚步就轻盈了．－－泰戈尔]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Add Two Numbers]]></title>
     <url>%2F2017%2F12%2F10%2FAdd-Two-Numbers%2F</url>
     <content type="text"><![CDATA[“每天一个算法，第２天” ProblemYou are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of nodes contain a single digit. Add the two numbers and return it as a linked list. Example123Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt;4)Output: 7 -&gt; 0 -&gt; 8Explanation: 342 + 465 = 807. 你将得到２个存储非负整数的非空链表，这些单整数反序存储在每一个链表节点，将这两个链表的数字相加作为一个链表返回。这个题是Leetcode上的Algorithms的第２题，可从这里跳转：https://leetcode.com/problems/add-two-numbers/description/ Solution12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455struct ListNode &#123; int val; ListNode* next; ListNode(int x): val(x),next(NULL) &#123;&#125;&#125;;class Solution &#123;public: //method 1 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123; int n1 = 0, n2 = 0, i = 0, j = 0; while (l1 != NULL) &#123; n1 += l1-&gt;val * pow(10, i++); l1 = l1-&gt;next; &#125; while (l2 != NULL) &#123; n2 += l2-&gt;val * pow(10, j++); l2 = l2-&gt;next; &#125; int sum = n1 + n2; ListNode* res = new ListNode(-1); ListNode* cur = res; while (sum) &#123; cur-&gt;next = new ListNode(sum%10); sum /= 10; cur = cur-&gt;next; &#125; return res-&gt;next; &#125; //method 2 ListNode* add2Numbers(ListNode* l1, ListNode* l2) &#123; ListNode* p = l1; ListNode* q = l2; ListNode* res = new ListNode(-1); ListNode* cur = res; int carry = 0; while (p || q ) &#123; int x = (p?p-&gt;val:0); int y = (q?q-&gt;val:0); int sum = x + y + carry; carry = sum / 10; cur-&gt;next = new ListNode(sum%10); cur = cur-&gt;next; if (p) p = p-&gt;next; if (q) q = q-&gt;next; &#125; if (carry &gt; 0) cur-&gt;next = new ListNode(carry); return res-&gt;next; &#125;&#125;; 没有进行内存释放的调用测试代码]]></content>
