@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Arch 开启pacman和yaourt多线程下载]]></title>
+    <url>%2F2018%2F03%2F10%2FArch-%E5%BC%80%E5%90%AFpacman%E5%92%8Cyaourt%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%2F</url>
+    <content type="text"><![CDATA[配置pacman要修改的配置文件：/etc/pacman.conf，需要root权限，需要下载axel12$ sudo pacman -S axel$ sudo vim /etc/pacman.conf 找到GENERAL OPTIONS，在options下的加上一行：XferCommand = /usr/bin/axel -n 4 -a -o %o %u其中各项含义：-n 4：同时打开４线程-a ：打印进度信息 配置yaourt要修改的配置文件：/etc/makepkg.conf，需要root权限，需要下载aria212$ sudo pacman -S aria2$ sudo vim /etc/makepkg.conf 将SOURCE ACQUISITION下的DLAGETS的’http::/usr/bin/curl -fLC - –retry 3 –retry-dela y 3 -o %o %u’改成’http::/usr/bin/aria2c -s 4 -m 2 -o %o %u’-s 4：链接的服务器数量-m 2：线程数量]]></content>
+      <categories>
+        <category>Technique</category>
+      </categories>
+      <tags>
+        <tag>Arch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[句子日常]]></title>
     <url>%2F2018%2F03%2F01%2F%E5%8F%A5%E5%AD%90%E6%97%A5%E5%B8%B8%2F</url>
     <content type="text"><![CDATA[“平时不经意的收藏，于闲时默念” 有趣的句子如果你解决不了一个问题，那么就解决一个更简单的问题：去发现问题．情绪，是智慧不够的一种产物．方向比努力重要，能力比知识重要，健康比成绩重要．人生三大疑惑：我是什么人？来自何处？要往何处去？无需想起，因为从未忘记．努力有用的话，还需要天才做什么？我们走的太远，以至于忘了为什么而出发．看清一个人又何必去揭穿，讨厌一个人有何必去翻脸．无论你遇见谁，Ta都是你生命中该出现的人，绝非偶然，Ta一定会教你一些什么．有一个夜晚，我烧毁了所有的记忆，从此我的梦就透明了；有一个早晨，我扔掉了所有的昨天，从此我的脚步就轻盈了．－－泰戈尔祝今晚赶路的人身体健康；愿他的食物能撑到最后；盼他的狗不会累垮；望他的火柴总能打着火． 海子佳句埋下一座城，关了所有灯．你的夕阳，我的容颜，谁的三分之一年．摇曳在笔尖的舞姿，是聚光灯下最浓烈的一抹艳红．我目送沿海的日落，紧抱一个醉生梦死的枕头，游不出回忆却学不会放手，怎么走？用一根火柴烧一座蜃楼，借这场大雨让自己逃走．躲在万劫不复的街头，微笑渗透覆水难收．睫毛下的伤城路过了谁的风景谁的心．当掉的浅色寂语，你开了一家收购店，等来了遗忘的海角天光．女巫亲吻过的咒语破天而来，浇湿的誓言漉漉退场．我坐在海上补一张网，你伏在海底披星戴月的歌唱．等一个人，还是等一个故事．囚渡一个世界，共一场生死．那首关于我们的歌，你把结局唱给了谁听．你掌心华丽的情色线条，纠结进了谁的城池里欢声笑语．]]></content>
