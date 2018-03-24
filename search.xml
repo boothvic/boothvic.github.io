@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[那就叫随笔吧]]></title>
+    <url>%2F2018%2F03%2F24%2F%E9%82%A3%E5%B0%B1%E5%8F%AB%E9%9A%8F%E7%AC%94%E5%90%A7%2F</url>
+    <content type="text"><![CDATA[“人与人的牵绊虽然重要，但孤独也同样重要。” 今天是我公历的生日，但一直以来都是根据家乡的习俗过农历的生日，所以今天也是一个普通的日子。当然，即使今天一如既往，收到兄弟朋友们的祝福还是挺开心的。 清明临近，祭祖时期。林氏家族组织的祭祖活动？行为？算了，就叫祭祀吧。一直以来在外学习的我，家族里的一切都是老爸处理的，今年也不例外。我，有很多疑惑要去解决，有很多想做的事，有很多未看的书……处理事情还不能游刃有余的我，现在只能专心做好眼前的事，所以，别的，以后再说。 问过朋友们一个问题：当一个人意识到自身存在问题，如果改变也是一种逃避，肯定现在以及过去还是改变，Ta该怎么选择？朋友们的回答有些出入，但都表达了一个意思，具体问题具体分析，该变则变。这个问题，两个选择只是为了表明态度，如果说肯定现在以及过去是逃避问题不把问题当问题，那么做出改变是正视问题解决问题。绝大多数人都会选择后者，因为不做出改变，什么都创造不出来，什么都得不到，什么都给予不了。但是，我对这种近似标准答案的选择感到有些恐惧。我希望能够遇到一个毫不犹豫选择肯定现在以及过去的人，或是一个毫不犹豫选择改变的人。比起后者，我更希望遇到前者，因为那样会比较有趣。]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Arch 开启pacman和yaourt多线程下载]]></title>
     <url>%2F2018%2F03%2F10%2FArch-%E5%BC%80%E5%90%AFpacman%E5%92%8Cyaourt%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%2F</url>
     <content type="text"><![CDATA[配置pacman要修改的配置文件：/etc/pacman.conf，需要root权限，需要下载axel12$ sudo pacman -S axel$ sudo vim /etc/pacman.conf 找到GENERAL OPTIONS，在options下的加上一行：XferCommand = /usr/bin/axel -n 4 -a -o %o %u其中各项含义：-n 4：同时打开４线程-a ：打印进度信息 配置yaourt要修改的配置文件：/etc/makepkg.conf，需要root权限，需要下载aria212$ sudo pacman -S aria2$ sudo vim /etc/makepkg.conf 将SOURCE ACQUISITION下的DLAGETS的’http::/usr/bin/curl -fLC - –retry 3 –retry-dela y 3 -o %o %u’改成’http::/usr/bin/aria2c -s 4 -m 2 -o %o %u’-s 4：链接的服务器数量-m 2：线程数量]]></content>
